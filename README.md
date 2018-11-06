@@ -25,8 +25,22 @@ dependencies {
  ```
   <activity android:name=".VideoViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/><!--重要-->
+```  
+### 4、在xml布局文件中使用如下：  
 ```
-### 4、在你所使用的地方调用此方法就可以  
+<FrameLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="200dp"
+        android:background="#00000000">
+        <com.luchongbin.videoplayer.lcbvideoplayer.LCBVideoPlayer
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+ ```
+### 5、在你所使用的地方调用此方法就可以  
 ```
 /**
      * <p>配置要播放的内容</p>
@@ -38,4 +52,12 @@ dependencies {
      * @param ifShowTitle 是否在非全屏下显示标题 | The title is displayed in full-screen under
      */
     public void setUp(String url, String thumb, String title, boolean ifShowTitle)  
+   ```  
+   如下所示：
    ```
+   LCBVideoPlayer mLCBVideoPlayer = findViewById(R.id.videoView);
+        String mImageUri = "https://pic.vjshi.com/2018-11-06/be3d03b4cf7e8468461de294db0757c2/online/puzzle.jpg?x-oss-process=style/watermark";
+        String mVideoUri = "https://mp4.vjshi.com/2018-11-06/be3d03b4cf7e8468461de294db0757c2.mp4";
+       
+        mLCBVideoPlayer.setUp(mVideoUri,mImageUri,"标题",false);
+```
