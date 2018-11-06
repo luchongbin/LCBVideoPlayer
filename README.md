@@ -2,7 +2,7 @@
 # 先来个效果图  
 ![效果图](https://github.com/luchongbin/LCBVideoPlayer/blob/master/gif/introduce.gif)  
 # 使用说明  
-1、Add it in your root build.gradle at the end of repositories:
+### 1、Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
 		repositories {
@@ -11,13 +11,13 @@ allprojects {
 		}
 	}
 ```  
-2、Add the dependency：  
+### 2、Add the dependency：  
 ```  
 dependencies {
 	        implementation 'com.github.luchongbin:LCBVideoPlayer:v1.0.0'  
 	}  
   ```  
- 3、在Manifest中Activity的注册文件中添加  
+### 3、在Manifest中Activity的注册文件中添加  
  ```
  android:configChanges="orientation|keyboardHidden|screenSize"/><!--重要-->
  ```  
@@ -26,7 +26,7 @@ dependencies {
   <activity android:name=".VideoViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/><!--重要-->
 ```
-4、在你所使用的地方调用此方法就可以  
+### 4、在你所使用的地方调用此方法就可以  
 ```
 /**
      * <p>配置要播放的内容</p>
